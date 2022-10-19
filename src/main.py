@@ -4,9 +4,9 @@ from lab_python_oop.square import Square
 import pyjokes
 
 def main():
-    r = Rectangle("синего", 3, 4)
-    c = Circle("зеленого", 8)
-    s = Square("красного", 10)
+    r = Rectangle("синего", 12, 12)
+    c = Circle("зеленого", 12)
+    s = Square("красного", 12)
     print(r)
     print(c)
     print(s)
