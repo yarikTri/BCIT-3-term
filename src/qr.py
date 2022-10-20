@@ -61,7 +61,6 @@ Args:
 Returns:
     list[float]: Список корней
 '''
-
 def get_roots_2qr(a, b, c):
     result = []
     D = b ** 2 - 4 * a * c
