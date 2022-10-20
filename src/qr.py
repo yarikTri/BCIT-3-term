@@ -1,17 +1,15 @@
 import sys
 import math
 
-
+'''
+Читаем коэффициент из командной строки или вводим с клавиатуры
+Args:
+    index (int): Номер параметра в командной строке
+    prompt (str): Приглашение для ввода коэффицента
+Returns:
+    float: Коэффициент квадратного уравнения
+'''
 def get_coef(index, prompt):
-    '''
-    Читаем коэффициент из командной строки или вводим с клавиатуры
-    Args:
-        index (int): Номер параметра в командной строке
-        prompt (str): Приглашение для ввода коэффицента
-    Returns:
-        float: Коэффициент квадратного уравнения
-    '''
-
     isError = True
     try:
         # Пробуем прочитать коэффициент из командной строки
@@ -31,17 +29,16 @@ def get_coef(index, prompt):
 
     return coef
 
-
+'''
+Вычисление корней квадратного уравнения
+Args:
+    a (float): коэффициент А
+    b (float): коэффициент B
+    c (float): коэффициент C
+Returns:
+    list[float]: Список корней
+'''
 def get_roots(a, b, c):
-    '''
-    Вычисление корней квадратного уравнения
-    Args:
-        a (float): коэффициент А
-        b (float): коэффициент B
-        c (float): коэффициент C
-    Returns:
-        list[float]: Список корней
-    '''
     result = []
     D = b * b - 4 * a * c
     if D == 0.0:
@@ -55,18 +52,17 @@ def get_roots(a, b, c):
         result.append(root2)
     return result
 
+'''
+Вычисление корней биквадратного уравнения
+Args:
+    a (float): коэффициент А
+    b (float): коэффициент B
+    c (float): коэффициент C
+Returns:
+    list[float]: Список корней
+'''
 
 def get_roots_2qr(a, b, c):
-    '''
-      Вычисление корней биквадратного уравнения
-      Args:
-          a (float): коэффициент А
-          b (float): коэффициент B
-          c (float): коэффициент C
-      Returns:
-          list[float]: Список корней
-      '''
-
     result = []
     D = b ** 2 - 4 * a * c
     if D == 0.0:
@@ -90,14 +86,12 @@ def get_roots_2qr(a, b, c):
 
     return result
 
-
+'''
+   Вывод в консоль корней уравнения
+   Args:
+       roots (list[float]): список корней
+'''
 def print_roots(roots):
-    '''
-       Вывод в консоль корней уравнения
-       Args:
-           roots (list[float]): список корней
-    '''
-
     roots_count = len(roots)
     if roots_count == 0:
         print('Нет корней')
@@ -112,9 +106,6 @@ def print_roots(roots):
 
 
 def main():
-    '''
-    Основная функция
-    '''
     a = get_coef(1, 'Введите коэффициент А:')
     b = get_coef(2, 'Введите коэффициент B:')
     c = get_coef(3, 'Введите коэффициент C:')
