@@ -7,6 +7,7 @@ from lab_python_fp.unique import Unique
 from lab_python_fp.print_result import print_result
 from lab_python_fp.cm_timer import cm_timer_1
 
+
 @print_result
 def foo(a):
     return a
@@ -18,18 +19,18 @@ def f1(arg):
 
 @print_result
 def f2(arg):
-    return list(filter(lambda str: str.lower().startswith('программист'), arg))
+    return list(filter(lambda str: str.lower().startswith('developer'), arg))
 
 
 @print_result
 def f3(arg):
-    return list(map(lambda str: str + ' с опытом Python', arg))
+    return list(map(lambda str: str + ' with Python experience', arg))
 
 
 @print_result
 def f4(arg):
     job_salary = zip(arg, gen_random(len(arg), 100000, 200000))
-    return ["{}, зарплата {} руб.".format(job, salary) for job, salary in job_salary]
+    return ["{}, salary {} rub.".format(job, salary) for job, salary in job_salary]
 
 
 if __name__ == '__main__':
@@ -44,3 +45,4 @@ if __name__ == '__main__':
 
     with cm_timer_1():
         f4(f3(f2(f1(data))))
+

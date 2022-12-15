@@ -1,5 +1,4 @@
 import unittest
-from unittest.mock import patch
 
 from lab_python_fp.process_data import f1
 from lab_python_fp.unique import Unique
@@ -8,18 +7,18 @@ from lab_python_fp.unique import Unique
 class Test_Process_Data_F1(unittest.TestCase):
     def setUp(self):
         self.data = [
-            {"job-name" : "Street-photographer"}, 
-            {"job-name" : "programmist"} ,
-            {"job-name" : "programmist"}, 
-            {"job-name" : "Tatu-master"}
+            {"job-name" : "street-photographer"}, 
+            {"job-name" : "developer"} ,
+            {"job-name" : "developer"}, 
+            {"job-name" : "tatoo-master"}
         ]
         self.supposed_result = [
-            "programmist",
-            "Street-photographer",
-            "Tatu-master"
+            "developer",
+            "street-photographer",
+            "tatoo-master"
         ] 
-    
-    def test_without_mock(self):
+
+    def test(self):
         res = f1(self.data)
         self.assertEqual(res, self.supposed_result)
 
